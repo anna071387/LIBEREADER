@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="center topBottomOffset">
+        {{!-- if error log error --}}
+        {{#if error}}
+        <div class="alert alert-danger">
+            {{error}}
+        </div>
+        {{!-- else if no error, post registration form--}}
+        {{/if}}
+
+        <form action="/register" method="post" id="registrationFormID">
+            <div class="row">
+                <div class="col-auto">
+                    <div class="form-group">
+                        <label for="firstNameInput">First Name</label>
+                        <input type="text" class="form-control" name="firstNameInput" id="firstNameInput" placeholder="Enter First Name" required>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="form-group">
+                        <label for="lastNameInput">Last Name</label>
+                        <input type="text" class="form-control" name="lastNameInput" id="lastNameInput" placeholder="Enter Last Name" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="emailInput">Email address</label>
+                <input type="email" class="form-control" name="emailInput" id="emailInput" placeholder="Enter email" aria-describedby="emailHelp" required>
+            </div>
+            <div class="form-group">
+                <label for="passwordInput">Password</label>
+                <input type="password" class="form-control" name="passwordInput" id="passwordInput" placeholder="Password" minlength="8" aria-describedby="passwordHelpInline" required>
+                <small id="passwordHelpInline">
+                    Your password must be at least 8 characters long
+                </small>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
