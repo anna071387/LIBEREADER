@@ -11,16 +11,16 @@ class books extends Model {
 books.init(
     {
       genre: {
-        type: DataTypes.VARCHAR(25), 
+        type: DataTypes.STRING, 
         allowNull: false,
 
       },  
       author: {
-        type: DataTypes.VARCHAR(40),
+        type: DataTypes.STRING,
         allowNull: false,
       },
       title: {
-        type: DataTypes.VARCHAR(50),
+        type: DataTypes.STRING,
         allowNull: false,
       },
       id_number: {

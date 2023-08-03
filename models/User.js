@@ -18,16 +18,16 @@ User.init(
           defaultValue:UUIDV4
         },
         user_name: {
-          type: DataTypes.VARCHAR(15),
+          type: DataTypes.STRING,
           allowNull: false,
 
         },
         first_name: {
-          type: DataTypes.VARCHAR(10),
+          type: DataTypes.STRING,
           allowNull: false,
         },
         last_name: {
-          type: DataTypes.VARCHAR,
+          type: DataTypes.STRING,
           allowNull: false,
         },
        
