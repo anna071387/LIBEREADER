@@ -1,0 +1,91 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.btn {
+    color: white;
+    background-color: #0072ee !important;
+}
+
+footer a {
+    color: #78a0ff;
+}
+
+.list-group a {
+    color: #1373e9;
+}
+
+.item a {
+    color: #006ee5;
+}
+
+.list-unstyled a {
+    color: #0072ee;
+}
+
+/* search bar */
+.searchBar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.list-group {
+    margin-bottom: 20px;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.card-img-top {
+    height: 400px;
+}
+
+.splash {
+    height: 35em;
+    padding-top: 9em;
+    background: no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+}
+
+.splash .text-muted {
+    color: white !important;
+}
+
+.error-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.error-details {
+    text-align: left
+}
+
+.error-actions {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.error-actions .btn {
+    margin-right: 10px;
+}
+
+.topBottomOffset {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.topOffset {
+    margin-top: 20px;
+}
