@@ -2,13 +2,14 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class books extends Model {
+
+class Books extends Model {
     checkPassword(loginPw) {
-        return bcrypt.compareSync(loginPW, this.password);
+        return bcrypt.compareSync(loginPw, this.password);
     }
 }
 
-books.init(
+Books.init(
     {
       genre: {
         type: DataTypes.STRING, 
@@ -23,18 +24,17 @@ books.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
-      id_number: {
-        type: DataTypes.STRING,
-        allowNull:false,
+      id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
       },
-      },
-    {
-      sequelize,
-      timestamps: false,
-      freezeTableName: true,
-      underscored: true,
-      modelName: 'books',
-    }
-  );
-
-  module.exports = { books};
+    },
+      {
+        sequelize,
+        modelName: 'books',
+      }
+    );
+  
+    module.exports = Books;
