@@ -2,7 +2,7 @@ const searchButton = document.getElementById("search-button")
 const searchInput = document.getElementById("search-input");
 const resultsDiv = document.getElementById("results");
 
-const apiKey = 'AIzaSyAKLCB5BqHJYojoMKTg5ncFrP6-HrdElQM';
+const apiKey = '';
 const baseApiUrl = `https://www.googleapis.com/books/v1/volumes`;
     searchButton.addEventListener("click", () => {
         const query = searchInput.value.trim();
