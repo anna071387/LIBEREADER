@@ -1,0 +1,41 @@
+<div class="container topBottomOffset">
+    <div class="center">
+
+{{!-- catch error --}}
+        {{#if error}}
+        <div class="alert alert-danger">
+            {{error}}
+        </div>
+        {{/if}}
+{{!-- otherwise, show account info --}}
+        <form method="post" action="/user/account">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label for="firstNameInput">First name</label>
+                        <input type="text" name="firstNameInput" id="firstNameInput" class="form-control input-lg" placeholder="{{user.firstName}}">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label for="lastNameInput">Last name</label>
+                        <input type="text" name="lastNameInput" id="lastNameInput" class="form-control input-lg" placeholder="{{user.lastName}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="emailInput">Email address</label>
+                <input type="email" class="form-control" name="emailInput" id="emailInput" aria-describedby="emailHelp" placeholder="{{user.email}}">
+            </div>
+
+            <div class="form-group">
+                <label for="passwordInput">Password</label>
+                <input type="password" class="form-control" name="passwordInput" id="passwordInput" placeholder="blank password">
+            </div>
+
+            <button type="submit" class="btn btn-primary">update</button>
+        </form>
+    </div>
+</div>
