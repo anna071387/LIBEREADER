@@ -9,6 +9,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ });
 
+const { Books } = require('./models/Books');
+
 // app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
