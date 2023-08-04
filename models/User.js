@@ -14,8 +14,7 @@ User.init(
           type: DataTypes.INTEGER,
           allowNull: false,
           primaryKey: true,
-          type: DataTypes.UUID,
-          defaultValue:UUIDV4
+          autoIncrement: true
         },
         user_name: {
           type: DataTypes.STRING,
@@ -35,10 +34,8 @@ User.init(
       {
         
         sequelize,
-        timestamps: false,
-        underscored: true,
         modelName: 'User'
       }
     );
     
-    module.exports = { User};
+    module.exports = User;
