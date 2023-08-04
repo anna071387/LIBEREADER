@@ -1,8 +1,6 @@
-const apiKey = '';
+const apiKey = 'AIzaSyAKLCB5BqHJYojoMKTg5ncFrP6-HrdElQM';
 
-const searchButton = document.getElementById("");
-const searchInput = document.getElementById("");
-const resultsDiv = document.getElementById("");
+const searchButton = document.getElementById("search-button");
 
 async function fetchGoogleBooks(query) {
   try {

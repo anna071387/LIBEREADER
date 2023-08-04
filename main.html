@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="scripts/main.js"></script>
-  <script src="utils/api.js"></script>
+
+  <script src="utils/api.js" type="module"></script>
+  <script src="utils/functions.js" type="module"></script>
   <title>Google Books API Example</title>
 </head>
 <body>
   <h1>Authors</h1>
   <ul id="authors"></ul>
-
+    
+    <input type="text" id="search-input">
+    <button id="search-button">Search!</button>
+    <div id="results"></div>
+    
 </body>
 </html>
