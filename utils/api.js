@@ -1,8 +1,12 @@
-const GOOGLE_BOOKS_API_KEY = '';
+const apiKey = '';
+
+const searchButton = document.getElementById("");
+const searchInput = document.getElementById("");
+const resultsDiv = document.getElementById("");
 
 async function fetchGoogleBooks(query) {
   try {
-    const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&key=${GOOGLE_BOOKS_API_KEY}`;
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&key=${apiKey}`;
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error('Network response was not ok.');
@@ -14,5 +18,5 @@ async function fetchGoogleBooks(query) {
     return null;
   }
 }
-
+    
 export { fetchGoogleBooks };

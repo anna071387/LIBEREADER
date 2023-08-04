@@ -12,7 +12,8 @@ async function searchBooks(query) {
   } else {
     console.log('No books found.');
   }
-}
+};
+
 
 // Usage example:
 searchBooks('Harry Potter');
