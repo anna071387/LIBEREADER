@@ -1,4 +1,3 @@
-const router = require('express').Router();
 const userRoutes = require('./userRoutes');
 const booksRoutes = require('./booksRoutes');
 const libraryRoutes = require('./libraryRoutes');

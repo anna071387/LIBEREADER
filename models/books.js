@@ -1,13 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
+
 // const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
+const sequelize = require('../config/connection');
 
-class Books extends Model {
-    // checkPassword(loginPw) {
-    //     return bcrypt.compareSync(loginPw, this.password);
-    // }
-}
+
+class Books extends Model {}
+
 
 Books.init(
     {
@@ -31,10 +31,21 @@ Books.init(
         allowNull: false,
       },
     },
-      {
-        sequelize,
-        modelName: 'books',
-      }
-    );
-  
-    module.exports = Books;
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+  },
+  {
+    sequelize,
+    modelName: 'books',
+  }
+);
+
+module.exports = Books;
