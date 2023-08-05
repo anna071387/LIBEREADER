@@ -1,10 +1,16 @@
+
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const session = require('express-session');
+const SequelizeStore = require('connect-session-sequilize')(session.Store)
 
+
+
+const helpers = require('./utils')
 const app = express();
 const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ });
