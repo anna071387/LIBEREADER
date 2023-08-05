@@ -13,9 +13,9 @@ https:deployed app in heroku
 
 ## Description
 The app LIBEREADER is designed to create an interractive way to view books and create personal reviews. 
-Any avid reader who wants to record personal thoughts about the books that were read, now has a chance to create an account with the LEABREADER. 
+Any avid reader who wants to record personal thoughts about the books that were read, now has a chance to create an account with the LIBEREADER. 
 
-It is Easy to create an account by entering a presonal username, provide email and password to your LIBEREADER library.  
+It is Easy to create an account by entering a personal username, provide an email and a password.  
 
 
 
@@ -27,7 +27,7 @@ https://drive.google.com/addpathhere
 ## Use
 *   For a new user: select Register button that will take you to the registration form. Create an account.
 *   For an existing user: select Login button. Provide username, email, and password. If the account already exists you will be redirected to the personal account page. 
-*	When loged in you can browse the attached books library by typing your search in the search bar. THe library is base on google books api which allows you to view books by a genre, an author and a title. 
+*	When loged in you can browse the attached books library by typing your search in the search bar. The library is based on google books api which allows you to view books by a genre, author and a title. 
 *	The landing page shows the curated books that were already read by other users. You may view the other users reviews of books as well. Because everyone has an opinion about a book, they can only contribute to personal posted review of the book.   
 *	Every logedin page will have an option to logout. 
  
@@ -58,9 +58,9 @@ Every registered account and user can browse books from the library and write th
 * **MySQL**: Database
 * **Lodash**: Used to simplify object arrays
 
-This project is designed withe the help of following sources: 
+This project is designed with help of following sources: 
 © 2023 edX Boot Camps LLC, teaching materials and videos.
-Helping of Teaching assitants, teacher and tutoring assistant at the bootcamp. 
+Helping of Teaching assitants, teacher and tutoring assistants at the bootcamp. 
 Further resources include: W3schools, and personally conducted research.
 
 
