@@ -11,6 +11,12 @@ class Books extends Model {
 
 Books.init(
     {
+      id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+      },
       genre: {
         type: DataTypes.STRING, 
         allowNull: false,
@@ -23,12 +29,6 @@ Books.init(
       title: {
         type: DataTypes.STRING,
         allowNull: false,
-      },
-      id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
       },
     },
       {
