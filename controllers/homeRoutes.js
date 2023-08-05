@@ -5,44 +5,57 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const booksData = await Books.findAll({
+    const dbbooksData = await Books.findAll({
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['id'],
         },
       ],
     });
 
     // Serialize data so the template can read it
-    const books = booksData.map((books) => books.get({ plain: true }));
+    const books = dbbooksData.map((books) => books.get({ plain: true }));
 
+
+    req.session.save(() => {
+      if(req.session.countVisit) {
+        req.session.countVisit++;
+      } else {
+        req.session.countVisit = 1;
+      }
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       books, 
+      countVisit: req.session.countVisit,
       logged_in: req.session.logged_in 
     });
+  });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
 router.get('/books/:id', async (req, res) => {
   try {
-    const booksData = await Books.findByPk(req.params.id, {
+    const dbbooksData = await Books.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          // (i think we need one more parameter)
+          attributes: ['id', 
+        ],
         },
       ],
     });
 
-    const books = booksData.get({ plain: true });
+    const books = dbbooksData.get({ plain: true });
 
     res.render('books', {
       ...books,
-      logged_in: req.session.logged_in
+      countVisit: req.session.countVisit,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
