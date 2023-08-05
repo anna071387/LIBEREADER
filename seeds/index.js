@@ -1,0 +1,36 @@
+const sequelize = require('../config/connection');
+const { User, Books, Library } = require('../models');
+
+const libraryData = require('./libraryData.json');
+const booksData = require('./booksData.json');
+
+const seedDatabase = async () => {
+  await sequelize.sync({ force: true });
+
+  const library = await Library.bulkCreate(libraryData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  for (const books of booksData) {
+    await Books.create({
+      ...books,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
+
+  process.exit(0);
+};
+
+
+// const seedAll = async () => {
+//   await sequelize.sync({ force: true });
+
+//   await seedGallery();
+
+//   await seedPaintings();
+
+//   process.exit(0);
+// };
+
+seedDatabase();
