@@ -19,24 +19,17 @@
                 <div class="col-md-7">
                     <ul class="list-group">
                         <li class="list-group-item">
+                            <small>Title:</small> {{result.title}}
+                        </li>
+                        <li class="list-group-item">
                             <small>Publisher:</small> {{result.publisher}}
                         </li>
                         <li class="list-group-item">
                             <small>Published Date:</small> {{result.publishedDate}}
                         </li>
-                        <li class="list-group-item">
-                            <small>Price:</small> ${{result.price}}
-                        </li>
                     </ul>
                 </div>
             </div>
-            {{!-- add to cart for bookstore (beyond mvp) --}}
-            {{!-- <div style="padding-top: 20px">
-                <form method="post" action="/addToCart/{{result.isbn}}">
-                    <button type="submit" name="addToCart" class="btn btn-primary" value="{{result.isbn}}">Add to
-                        Cart</button>
-                </form>
-            </div> --}}
 
             <!-- post description result -->
             <p class="h3">Description:</p>
