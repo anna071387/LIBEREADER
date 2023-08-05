@@ -3,12 +3,17 @@ const Books = require ('./Books');
 const Library = require ('./Library');
 
 Library.hasMany(Books, {
-    foreignKey: 'library_id',
+    foreignKey: 'books_id',
     onDelete: 'CASCADE',
   });
   
+User.hasMany(Books, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+
   Books.belongsTo(User, {
-    foreignKey: 'library_id',
+    foreignKey: 'user_id',
   });
 
 
