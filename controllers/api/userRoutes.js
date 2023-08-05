@@ -26,12 +26,12 @@ router.post('/', async (req, res) => {
 // Login
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const dbUserData = await User.findOne({ where: { email: req.body.email } });
 
-    if (!dbUserDatauserData) {
+    if (!dbUserData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'OOPS, something went wrong. Check your email and password!' });
       return;
     }
 
@@ -40,7 +40,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'OOPS, something went wrong. Check your email and password!' });
       return;
     }
 
@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
 
       res
         .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!' });
+        .json({ user: dbUserData, message: 'YAY, you are in!' });
     });
   } catch (err) {
     console.log(err);

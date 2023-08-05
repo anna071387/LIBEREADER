@@ -9,13 +9,11 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Books,
-          attributes: ['id'],
-
-
-
-
-
-          // add additional attributes
+          attributes: [
+            'genre',
+            'author',
+            'title'
+          ],
         },
       ],
     });
@@ -41,14 +39,11 @@ router.get('/library/:id', async (req, res) => {
       include: [
         {
           model: Books,
-          // (i think we need one more parameter)
-
-
-
-
-
-          attributes: ['id', 
-        ],
+          attributes: [
+            'genre',
+            'author',
+            'title'
+          ],
         },
       ],
     });
@@ -56,9 +51,8 @@ router.get('/library/:id', async (req, res) => {
     const library = dbLibraryData.get({ plain: true });
 
     res.render('library', {
-      ...library,
       //countVisit: req.session.countVisit,
-      logged_in: req.session.logged_in,
+      library, logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
