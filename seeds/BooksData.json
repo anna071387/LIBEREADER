@@ -5,12 +5,12 @@
     "title": "Harry Potter and the Philosopher's Stone"
   },
   {
-    "name": "Drama",
+    "genre": "Drama",
     "author": "E. Gilbert",
     "title": "Eat, Pray, Love"
   },
   {
-    "name": "Quest",
+    "genre": "Quest",
     "author": "P. Coelho",
     "title": "The Alchemist"
   }

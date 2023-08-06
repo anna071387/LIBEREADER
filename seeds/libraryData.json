@@ -1,20 +1,15 @@
 [
-  {
-    name: 'Printemps',
- 
-  },
-  {
-    name: 'Sommer',
+    {
+      "name": "Music Near Me"
   
-  },
-  {
-    name: 'Herfst',
-   
-  },
-  {
-    name: 'Invierno',
- 
-  }
-]
-
-
+    },
+    {
+      "name": "The Ultimate Tech Quiz"
+     
+    },
+    {
+      "name": "Roll 'Em Up"
+     
+    }
+  ]
+  
