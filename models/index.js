@@ -12,7 +12,7 @@ User.hasMany(Books, {
     onDelete: 'CASCADE',
   });
 
-  Books.belongsTo(User, {
+Books.belongsTo(User, {
     foreignKey: 'user_id',
   });
 
