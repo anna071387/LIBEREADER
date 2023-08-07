@@ -1,15 +1,17 @@
 # The LIBEREADER
 
-![alt text](./public/images/LOGO-01.png)
-![alt text](./public/images/)
-![alt text](./public/images/)
-![alt text](./public/images/)
-![alt text](./public/images/)
-
 
 https://github.com/anna071387/LIBEREADER
+https://enigmatic-refuge-35111-66091fd0ee77.herokuapp.com
+https://drive.google.com/drive/folders/1XsV4iAQfZh3y4RW-vizYXlwHivXUkTmV?usp=sharing
 
-https:deployed app in heroku
+![alt text](./public/images/LOGO-01.png)
+![alt text](./public/images/libereader-01.jpg)
+![alt text](./public/images/libereaderLogin-01.jpg)
+![alt text](./public/images/libereaderLogedinReview-01.jpg)
+![alt text](./public/images/libereader.jpg)
+![alt text](./public/images/DeployedWorkBench.jpg)
+
 
 ## Description
 The app LIBEREADER is designed to create an interractive way to view books and create personal reviews. 
@@ -18,11 +20,6 @@ Any avid reader who wants to record personal thoughts about the books that were 
 It is Easy to create an account by entering a personal username, provide an email and a password.  
 
 
-
-
-
-https://drive.google.com/addpathhere
- 
 
 ## Use
 *   For a new user: select Register button that will take you to the registration form. Create an account.
@@ -36,7 +33,6 @@ Enjoy your freedom of reading and writing your toughts in a safe environment of 
 
 The following animation demonstrates the application's appearance and functionality:
 
-![A new user visits a website.](./public/images/.gif)
 
 ## Result
 We developed a well-crafted, functioning, user friendly, intuitive website for searching books and providing personal review for the books that you have read. 
