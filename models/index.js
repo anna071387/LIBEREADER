@@ -1,11 +1,6 @@
 const User = require('./User');
 const Books = require ('./Books');
-const Library = require ('./Library');
 
-Library.hasMany(Books, {
-    foreignKey: 'books_id',
-    onDelete: 'CASCADE',
-  });
   
 User.hasMany(Books, {
     foreignKey: 'user_id',
@@ -17,4 +12,4 @@ Books.belongsTo(User, {
   });
 
 
-module.exports = { User, Books, Library };
+module.exports = { User, Books };

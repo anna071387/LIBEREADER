@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
-const { User, Books, Library } = require('../models');
+const { User, Books } = require('../models');
 
-const libraryData = require('./libraryData.json');
+
 const booksData = require('./booksData.json');
 const userData = require('./userData.json');
 

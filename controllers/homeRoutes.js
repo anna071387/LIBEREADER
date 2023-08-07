@@ -1,80 +1,53 @@
 const router = require('express').Router();
-const { Books, Library } = require('../models');
+const { Books, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all library 
-    const dbLibraryData = await Library.findAll({
+    // Get all projects and JOIN with user data
+    const bookstData = await Books.findAll({
       include: [
         {
-          model: Books,
-          attributes: [
-            'genre',
-            'author',
-            'title'
-          ],
+          model: User,
+          attributes: ['name'],
         },
       ],
     });
-// STOPS ANY USER FROM USING THE SITE WITHOUT LOGIN
+
     // Serialize data so the template can read it
-    const library = dbLibraryData.map((library) => library.get({ plain: true }));
+    const books = booksData.map((books) => books.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      library, 
-     // countVisit: req.session.countVisit,
-      logged_in: req.session.logged_in,
+      books, 
+      logged_in: req.session.logged_in 
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
 
-router.get('/library/:id', async (req, res) => {
+router.get('/books/:id', async (req, res) => {
   try {
-    const dbLibraryData = await Library.findByPk(req.params.id, {
+    const booksData = await Books.findByPk(req.params.id, {
       include: [
         {
-          model: Books,
-          attributes: [
-            'genre',
-            'author',
-            'title'
-          ],
+          model: User,
+          attributes: ['name'],
         },
       ],
     });
 
-    const library = dbLibraryData.get({ plain: true });
+    const books = booksData.get({ plain: true });
 
-    res.render('library', {
-      //countVisit: req.session.countVisit,
-      library, logged_in: req.session.logged_in,
+    res.render('project', {
+      ...books,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
-
-// GET one book
-router.get('/books/:id', async (req, res) => {
-  try {
-    const dbBooksData = await Books.findByPk(req.params.id);
-
-    const books = dbBooksData.get({ plain: true });
-    // Send over the 'loggedIn' session variable to the 'homepage' template
-    res.render('Books', { books, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -87,7 +60,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('user', {
+    res.render('profile', {
       ...user,
       logged_in: true
     });
@@ -96,22 +69,13 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-// Login route
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/user');
+    res.redirect('/profile');
     return;
   }
-  // Otherwise, render the 'login' template
 
-
-  //req.session.save(() => {
-     // if(req.session.countVisit) {
-       // req.session.countVisit++;
-      //} else {
-    //    req.session.countVisit = 1;
-      //}
   res.render('login');
 });
 

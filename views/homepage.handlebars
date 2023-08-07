@@ -1,3 +1,33 @@
-{{#each library as |library|}}
-{{> library-details}}
+<!-- Loop over each object in the projects array -->
+{{#each books as |books| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{get_emoji}}}
+      <a href="/books/{{books.title}}">{{books.author}}</a>
+    </h2>
+    <p>
+      
+      <!-- Pass needed_funding value to the helper function -->
+      <span class="rating-amount">{{format_amount books.needed_funding}}</span>
+      OUT OF
+      <span for="img" aria-label="out of 100"> 💯 </span>
+    </p>
+    <p>Created by {{books.user.name}} on {{format_date books.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{books.description}}
+    </p>
+  </div>
+</div>
 {{/each}}
+
+
+
+
+
+{{!-- {{#each library as |library|}}
+{{> library-details}}
+{{/each}} --}}

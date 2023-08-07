@@ -24,8 +24,8 @@ router.delete('/:id', withAuth, async (req, res) => {
       },
     });
 
-    if (!booksData) {
-      res.status(404).json({ message: 'No found with this id!' });
+    if (!BooksData) {
+      res.status(404).json({ message: 'No books found with this id!' });
       return;
     }
 
