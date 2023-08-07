@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,13 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{!-- add bootstrap css to the page --}}
-    <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css">
-    {{!-- add our own custom css to the page --}}
-    <link rel="stylesheet" href="./css/stylesheet.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
     {{!-- cdn bootstrap icons --}}
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
-        integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
     <script src="scripts/main.js"></script>
     <script src="utils/api.js"></script>
     <title>{{pageTitle}}</title>
@@ -32,11 +28,74 @@
     <script src="https://code.jquery.com/jquery-3.7.0.slim.js"
         integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
     {{!-- bootstrap --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    {{!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap(ideleted at symbol 5).3.1/dist/js/bootstrap.bundle.min.js" --}}
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
 
      <script src="../../public/js/functions.js"></script>
+</body>
+
+</html> --}}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIBEREADER</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+
+<body>
+  <div class="flex-column justify-space-around">
+      <header class="display-flex justify-space-between align-center p-2">
+      <h1>
+        <a  img src="/public/images/LOGO-01.png" alt="Logo" width=75px height=75px
+            href="/">LIBEREADER
+        </a>
+      </h1>
+      <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">Your Profile</a> |
+        <button class="no-button" id="logout">LogOut</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+      </nav>
+</header>
+    <main class="container container-fluid mt-5">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
+   <footer class="py-3 bg-dark footer">
+    <div class="container">
+        <div class="row text-white">
+            <div class="col">
+                <ul>
+                    <li>Developers:
+                        <strong>Brayden Day, Anna Gallagher, Reiley Burnitt, Bryce Debernarde</strong>
+                    </li>
+                    <li>
+                        <a href="https://github.com/anna071387/LIBEREADER">Github Source Code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+  </div>
+
+
+   <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>

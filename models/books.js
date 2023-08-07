@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-// const bcrypt = require('bcrypt');
+
 const sequelize = require('../config/connection');
 
 
@@ -14,11 +14,6 @@ Books.init(
         primaryKey: true,
         autoIncrement: true
       },
-      genre: {
-        type: DataTypes.STRING, 
-        allowNull: false,
-
-      },  
       author: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -27,9 +22,27 @@ Books.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
+      rating: {
+        type: DataTypes.INTEGER (100),
+        allowNull: false,
+      },
+      description: {
+        type: DataTypes.STRING, 
+        allowNull: false,
+      },  
+      user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'user',
+          key: 'id',
+        },
+      },
     },
       {
         sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
         modelName: 'books',
       }
     );
