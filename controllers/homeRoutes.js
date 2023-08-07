@@ -28,9 +28,9 @@ console.log(books);
   }
 });
 
-router.get('/books/:id', async (req, res) => {
+router.get('/book/:id', async (req, res) => {
   try {
-    const booksData = await Books.findByPk(req.params.id, {
+    const booksData = await Book.findByPk(req.params.id, {
       include: [
         {
           model: User,

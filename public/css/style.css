@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background-color: #f7f7f7;
+    background-color: rgb(241, 241, 241);
 }
 
 .nav-link {
@@ -13,7 +13,7 @@ body {
 
 .btn {
     color: white;
-    background-color: #0072ee !important;
+    background-color: #062c83 !important;
 }
 
 footer a {
