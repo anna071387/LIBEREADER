@@ -2,19 +2,19 @@
   {
     "author": "J.K. Rowling",
     "title": "Harry Potter and the Philosopher's Stone",
-    "rating": 96,
+    "book_rating": 96,
     "description": "This book was magic. Loved it!"
   },
   {
     "author": "E. Gilbert",
     "title": "Eat, Pray, Love",
-    "rating": 94,
+    "book_rating": 94,
     "description": "This book was inspirational. Well done!"
   },
   {
     "author": "P. Coelho",
     "title": "The Alchemist",
-    "rating": 98,
+    "book_rating": 98,
     "description": "After reading this book I look at my life differently. "
   }
 ]
